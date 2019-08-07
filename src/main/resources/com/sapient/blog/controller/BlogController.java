@@ -67,8 +67,8 @@ public class BlogController {
 	
 	@GetMapping(value = "/{uid}/{pid}", produces = {MediaType.APPLICATION_JSON_VALUE})
 	@ResponseStatus(code = HttpStatus.OK)
-	public Post getPostById(@PathVariable("uid")long uid, @PathVariable("pid")long pid) {
-		return postService.getPostById(pid, uid);
+	public Post getPostById(@PathVariable("uid")long userId, @PathVariable("pid")long postId) {
+		return postService.getPostById(postId, userId);
 	}
 	
 	@GetMapping(value = "/{uid}/posts", produces = {MediaType.APPLICATION_JSON_VALUE})
